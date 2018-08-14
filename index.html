@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>流程控制</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var num=prompt("请输入一个数字",45);
+    // console.log(num);
+    num%2==0?alert("该数为偶数"):alert("该数为奇数");
+
+    //点击确定，弹出您已弹出；取消，弹出您已取消退出
+    var num=confirm("您确定退出吗");
+    num==1?alert("您已退出"):alert("您已取消退出");
+    // console.log(num);
+
+    //接收用户
+    var num=prompt("请输入一个数字");
+    var num1=Math.random()*99;
+    num>num1?alert("你赢了"):alert("你输了");
+    console.log(Math.random()*99);
+
+
+   // 分支结构
+   // 嵌套分支:成绩判断
+    var num=prompt("请输入一个数字");
+    if(num>=0&&num<=100){
+        if(num<=100&&num>=90){
+            alert("优秀")
+        }else if(num<90&&num>=80){
+            alert("良好")
+        }else if(num<80&&num>=70){
+            alert("中")
+        }else if(num<70&&num>=60){
+            alert("及格")
+        }else if(num<60&&num>=0){
+            if(num<60&&num>=50){
+                alert("再努力一点")
+            }else if(num<50&&num>=40){
+                alert("还是有希望的")
+            }else{
+                alert("不及格")
+            }
+        }
+    }else{
+        alert("输入有误")
+    }
+//  switch：星期的输出
+    var num=prompt("请输入一个数字");
+    switch (num){
+        case "1":alert("星期一");break;
+        case "2":alert("星期二");break;
+        case "3":alert("星期三");break;
+        case "4":alert("星期四");break;
+        case "5":alert("星期五");break;
+        case "6":alert("星期六");break;
+        case "7":alert("星期日");break;
+        default:alert("输入有误")
+    }
+
+   // for循环
+    for(var i=0;i<5;i++){
+        console.log(1);
+    }
+    //输出1-10
+//     for(var i=0;i<10;i++){
+//         console.log(i+1);
+//     }
+//     for(var i=1;i<11;i++){
+//         console.log(i);
+//     }
+// //输出1-10中的偶数
+//     for(var i=1;i<11;i++){
+//         if(i%2==0){
+//             console.log(i);
+//         }
+//     }
+// //    1-10求和
+//     var sum=0;
+//     for(var i=1;i<11;i++){
+//         sum=sum+i;
+//     }
+//     console.log(sum);
+// // //    打印10个*号
+//     for(var i=1;i<11;i++){
+//        document.write("*");
+//     }
+// //    10行10列*
+//     for(var i=1;i<11;i++){
+//         for(var j=1;j<11;j++){
+//             document.write("*");
+//         }document.write("<br>");
+//     }
+
+//    7.打印表格十行十列i-j 隔行换色
+    document.write("<table>");
+    for(var i=1;i<11;i++){
+        if(i%2==0){
+            document.write("<tr bgcolor='yellow'> ")
+            for (var j=1;j<11;j++) {
+
+                document.write("<td>"+i+"-"+j+"</td>")
+            }
+            document.write("</tr>")
+            document.write("<br>");
+        }else {
+            document.write("<tr bgcolor='red'> ")
+            for (var j=1;j<11;j++) {
+
+                document.write("<td>"+i+"-"+j+"</td>")
+            }
+            document.write("</tr>")
+            document.write("<br>");
+        }
+    }
+    document.write("</table>")
+
+// //    8.九九乘法表
+    for(var i=1;i<10;i++){
+        for(var j=1;j<=i;j++){
+            if((i==3&&j==2)||(i==4&&j==2)){
+                document.write(j+"*"+i+"="+i*j+"&nbsp;&nbsp;&nbsp;&nbsp;");
+            }else {
+                document.write(j+"*"+i+"="+i*j+"&nbsp;&nbsp;");
+            }
+
+        }
+        document.write("<br>");
+    }
+//   9.表格交叉换色
+    document.write("<table>");
+    for(var i=1;i<11;i++){
+            document.write("<tr bgcolor='orange'> ");
+            for (var j=1;j<11;j++) {
+                if((i-j)%2==0){
+                    document.write("<td bgcolor='green'>"+i+"-"+j+"</td>");
+                }else{
+                    document.write("<td bgcolor='blue'>"+i+"-"+j+"</td>");
+                }
+            }
+            document.write("</tr>");
+            document.write("<br>");
+        }
+
+
+    document.write("</table>");
+
+//    金字塔：
+    var num2=4;
+    for(var i=1;i<5;i++){
+        for (var k=1;k<=num2-i;k++){
+            document.write("&nbsp;");
+        }
+        for (var j=1;j<=2*i-1;j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    // 鸡兔同笼问题
+    for(var i=1;i<=34;i++){
+        j=34-i;
+        if(2*i+4*j==96){
+            document.write("鸡有"+i+"只,兔有"+j+"只");
+        }
+    }
+    document.write("<br>");
+// 教材买书问题
+    for (var i=1;i<100;i++){
+        for(var j=1;j<=100-i;j++){
+            if(10*i+j*5+0.5*(100-i-j)==100){
+                document.write("教材有"+i+"本，参考书有"+j+"本,练习本有"+(100-i-j)+"本。")
+            }
+        }
+    }
+    document.write("<br>");
+//    操场问题
+    for(var i=100;i<200;i++){
+        if(i%3==1&&i%4==2&&i%5==3){
+            document.write("操场一共有"+i+"人。")
+        }
+    }document.write("<br>");
+//   回文数问题
+
+    for(var i=1;i<10;i++){
+        for(var j=1;j<10;j++){
+            for(var k=1;k<10;k++){
+                if(i==k){
+                    document.write(100*i+10*j+k);
+                    document.write("<br>");
+                }
+            }
+        }
+    }
+//四则运算问题
+    var num1=prompt("请输入第一个数");
+    var num2=prompt("请输第二个数");
+    var symbol=prompt("请输入运算符");
+    var num3=parseInt(num1)
+    var num4=parseInt(num2)
+    switch (symbol){
+        case "+":alert(num3+num4);break;
+        case "-":alert(num3-num4);break;
+        case "*":alert(num3*num4);break;
+        case "/":alert(num3/num4);break;
+        default:alert("输入有误");
+    }
+</script>
